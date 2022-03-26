@@ -2,8 +2,15 @@
 
 A small java practice for RestTemplate, JPA & UnitTest,  base on SpringBoot & H2.
 
-### application.properties
+### Environments
+- JDK: 1.8
+- H2:  2.1.210
+- SpringBoot: 2.1.12.RELEASE
+
+##### application.properties
 Change these properties to direct your h2 db or others. 
+
+./src/main/resources/application.properties
 
 ```properties
 spring.datasource.url=jdbc:h2:tcp://localhost/e:/Java_workspace/CurrencySample/h2Data/currency-sample
