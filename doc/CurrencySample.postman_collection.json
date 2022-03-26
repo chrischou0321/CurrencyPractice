@@ -1,0 +1,579 @@
+{
+	"info": {
+		"_postman_id": "6ff4bcd1-213a-4608-b918-fdb25423dd84",
+		"name": "CurrencySample",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api.coindesk",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.coindesk.com/v1/bpi/currentprice.json",
+					"protocol": "https",
+					"host": [
+						"api",
+						"coindesk",
+						"com"
+					],
+					"path": [
+						"v1",
+						"bpi",
+						"currentprice.json"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "api.coindesk",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.coindesk.com/v1/bpi/currentprice.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"coindesk",
+								"com"
+							],
+							"path": [
+								"v1",
+								"bpi",
+								"currentprice.json"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/javascript"
+						},
+						{
+							"key": "Content-Length",
+							"value": "679"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "max-age=15"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Mar 2022 11:49:37 GMT"
+						},
+						{
+							"key": "Expires",
+							"value": "Sat, 26 Mar 2022 11:50:07 UTC"
+						},
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Fat-Free Framework"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Hit from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 ded1ee0f770839d2b2fb7225385749c6.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "TPE50-C1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "cooUOovTNgaJPT7j0guoABPCDKC8Gcd9d_TjyRQXOiJ2TwizgFZtZQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"time\": {\n        \"updated\": \"Mar 26, 2022 11:49:00 UTC\",\n        \"updatedISO\": \"2022-03-26T11:49:00+00:00\",\n        \"updateduk\": \"Mar 26, 2022 at 11:49 GMT\"\n    },\n    \"disclaimer\": \"This data was produced from the CoinDesk Bitcoin Price Index (USD). Non-USD currency data converted using hourly conversion rate from openexchangerates.org\",\n    \"chartName\": \"Bitcoin\",\n    \"bpi\": {\n        \"USD\": {\n            \"code\": \"USD\",\n            \"symbol\": \"&#36;\",\n            \"rate\": \"44,423.6722\",\n            \"description\": \"United States Dollar\",\n            \"rate_float\": 44423.6722\n        },\n        \"GBP\": {\n            \"code\": \"GBP\",\n            \"symbol\": \"&pound;\",\n            \"rate\": \"33,679.8071\",\n            \"description\": \"British Pound Sterling\",\n            \"rate_float\": 33679.8071\n        },\n        \"EUR\": {\n            \"code\": \"EUR\",\n            \"symbol\": \"&euro;\",\n            \"rate\": \"40,445.5323\",\n            \"description\": \"Euro\",\n            \"rate_float\": 40445.5323\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "CoindeskTransfered",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/currency/coindesk",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"currency",
+						"coindesk"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CoindeskTransfered",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/currency/coindesk",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"currency",
+								"coindesk"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Mar 2022 11:49:23 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"\",\n    \"data\": {\n        \"lastUpdateTime\": \"2022/03/26 11:49:00\",\n        \"currencyList\": [\n            {\n                \"name\": \"USD\",\n                \"nameTW\": \"美金\",\n                \"exchangeRate\": 44411.6667\n            },\n            {\n                \"name\": \"GBP\",\n                \"nameTW\": \"英鎊\",\n                \"exchangeRate\": 33670.7051\n            },\n            {\n                \"name\": \"EUR\",\n                \"nameTW\": \"歐元\",\n                \"exchangeRate\": 40434.6019\n            }\n        ]\n    },\n    \"code\": 111\n}"
+				}
+			]
+		},
+		{
+			"name": "findOne",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/currency/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"currency",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddCurrency",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"USA\",\r\n    \"symbol\": \"@\",\r\n    \"rate\": 15.43210123456,\r\n    \"desc\": \"init\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/currency",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"currency"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Fail_BlankSymbol",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"USA\",\r\n    \"symbol\": \"\",\r\n    \"rate\": 15.43210123456,\r\n    \"desc\": \"init\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/currency",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"currency"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Mar 2022 12:53:06 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"symbol cannot be blank. \",\n    \"data\": null,\n    \"code\": 222\n}"
+				},
+				{
+					"name": "Fail_BlankCode",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"\",\r\n    \"symbol\": \"@\",\r\n    \"rate\": 15.43210123456,\r\n    \"desc\": \"init\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/currency",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"currency"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Mar 2022 12:55:15 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"code cannot be blank. \",\n    \"data\": null,\n    \"code\": 222\n}"
+				},
+				{
+					"name": "Fail_RateNull",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"USA\",\r\n    \"symbol\": \"@\",\r\n    \"rate\": null,\r\n    \"desc\": \"init\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/currency",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"currency"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Mar 2022 13:02:07 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"must not be null \",\n    \"data\": null,\n    \"code\": 222\n}"
+				},
+				{
+					"name": "Fail_InvalidRate",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"USA\",\r\n    \"symbol\": \"@\",\r\n    \"rate\": 0.3,\r\n    \"desc\": \"init\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/currency",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"currency"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Mar 2022 14:39:30 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"This request for adding is invalid.\",\n    \"data\": null,\n    \"code\": 333\n}"
+				},
+				{
+					"name": "Fail_InvalidCode_moreThan3",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"USAC\",\r\n    \"symbol\": \"@\",\r\n    \"rate\": 0.3,\r\n    \"desc\": \"init\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/currency",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"currency"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Mar 2022 14:41:23 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"This request for adding is invalid.\",\n    \"data\": null,\n    \"code\": 333\n}"
+				}
+			]
+		},
+		{
+			"name": "UpdateCurrency",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"USA\",\r\n    \"symbol\": \"$\",\r\n    \"rate\": 2.1230987654321,\r\n    \"desc\": \"update_02\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/currency/2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"currency",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Fail_NotFound",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"USA\",\r\n    \"symbol\": \"$\",\r\n    \"rate\": 2.1230987654321,\r\n    \"desc\": \"update_02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/currency/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"currency",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Mar 2022 14:42:00 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"cannot found currency in system.\",\n    \"data\": null,\n    \"code\": 333\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteCurrency",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/currency/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"currency",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
