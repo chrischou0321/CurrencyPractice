@@ -16,7 +16,7 @@ import java.util.Objects;
 public class CurrencyPO {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "CHRIS_CURRENCY_SEQUENCE")
     private long id;
 
     private String code;

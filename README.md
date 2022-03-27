@@ -30,16 +30,21 @@ CREATE TABLE CURRENCY(
 );
 
 CREATE INDEX IDX_CURRENCY_SYMBOL ON CURRENCY(SYMBOL);
+
+CREATE SEQUENCE CHRIS_CURRENCY_SEQUENCE START WITH 1 INCREMENT BY 1;
 ```
 
 ### The Script for Postman
-> CurrencySample / doc / CurrencySample.postman_collection.json
-Change environment parameter base after import
+Create environment parameter `base_url` before use.
+```properties
+# import file
+{baseDir}/CurrencySample/doc/CurrencySample.postman_collection.json
+```
 
 
 ### Feature
-- [ ] Currency List from DB
-- [ ] AOP manage exceptions
-- [ ] LoadingCache
-- [ ] ActionLogHistory
-- [ ] H2 in memory
+- [ ] New API: getCurrencyList
+- [ ] AOP manage controller's exceptions
+- [ ] LoadingCache(?
+- [ ] add ActionHistoryLog
+- [ ] H2 in memory while testing
