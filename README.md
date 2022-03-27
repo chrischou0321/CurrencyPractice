@@ -40,7 +40,13 @@ Create environment parameter `base_url` before use.
 # import file
 {baseDir}/CurrencySample/doc/CurrencySample.postman_collection.json
 ```
-
+##### Include
+- api.coindesk
+- CoindeskTransfered
+- findOne
+- AddCurrency
+- UpdateCurrency
+- DeleteCurrency
 
 ### Feature
 - [ ] New API: getCurrencyList
