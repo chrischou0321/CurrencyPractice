@@ -13,7 +13,7 @@ Change these properties to direct your h2 db or others.
 ./src/main/resources/application.properties
 
 ```properties
-spring.datasource.url=jdbc:h2:tcp://localhost/~/Java_workspace/CurrencySample/h2Data/currency-sample
+spring.datasource.url=jdbc:h2:tcp://localhost/~/Java_workspace/CurrencyPractice/h2Data/currency-sample
 spring.datasource.username=sa
 spring.datasource.password=
 ```
