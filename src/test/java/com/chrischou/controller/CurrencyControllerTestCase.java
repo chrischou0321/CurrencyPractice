@@ -8,6 +8,7 @@ import com.chrischou.controller.model.CustomCoinDeskData;
 import com.chrischou.controller.request.CurrencyAddRequest;
 import com.chrischou.controller.request.CurrencyUpdateRequest;
 import com.chrischou.enums.RespStatus;
+import com.chrischou.exceptions.CurrencyNotFoundException;
 import com.chrischou.repository.CurrencyRepository;
 import com.chrischou.repository.model.CurrencyPO;
 import org.apache.commons.lang3.StringUtils;
@@ -173,6 +174,9 @@ public class CurrencyControllerTestCase {
 
     private void testLoadExistCurrency() throws Exception {
         long id = 1;
+        // get source data to compare
+        CurrencyPO source = currencyRepository.findById(id).orElseThrow(CurrencyNotFoundException::new);
+        // start call Load API
         MockHttpServletResponse resp = mock.perform(
                 MockMvcRequestBuilders
                         .get(URI_WITH_ID, id)
@@ -188,10 +192,11 @@ public class CurrencyControllerTestCase {
         // data
         CurrencyDTO result = controllerResp.getData();
         Assert.assertNotNull(result);
-        Assert.assertTrue(result.getId() > 0);
-        Assert.assertEquals("USD", result.getCode());
-        Assert.assertEquals("$", result.getSymbol());
-        Assert.assertEquals(new BigDecimal("5.432101235"), result.getRate());
+        Assert.assertEquals(source.getId(), result.getId());
+        Assert.assertEquals(source.getCode(), result.getCode());
+        Assert.assertEquals(source.getSymbol(), result.getSymbol());
+        Assert.assertEquals(source.getRate(), result.getRate());
+        Assert.assertEquals(source.getDesc(), result.getDesc());
         System.out.println(result.toString());
     }
 

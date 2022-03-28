@@ -14,6 +14,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Date;
 import java.util.Locale;
+import java.util.TimeZone;
 import java.util.regex.Pattern;
 
 public class CommonUtils {
@@ -22,7 +23,7 @@ public class CommonUtils {
 
     private static final DateFormat DF_UTC = new SimpleDateFormat("MMMM d, yyyy hh:mm:ss 'UTC'", Locale.ENGLISH);
     private static final DateTimeFormatter DF_ISO = DateTimeFormatter.ISO_OFFSET_DATE_TIME;
-    private static final DateFormat DF_GMT = new SimpleDateFormat("MMMM d, yyyy 'at' hh:mm 'GMT'", Locale.ENGLISH);
+    private static final DateFormat DF_GMT = new SimpleDateFormat("MMMM d, yyyy 'at' hh:mm zzz", Locale.ENGLISH);
 
     private static final SimpleDateFormat DF_GLOBAL_DATE_FOR_DTO = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 
@@ -46,8 +47,9 @@ public class CommonUtils {
         return null;
     }
 
-    public static Date str2GMT(String dateStr) {
+    public static Date str2DateByZone(String dateStr) {
         try {
+            DF_GMT.setTimeZone(TimeZone.getTimeZone(ZoneId.of("Europe/London")));
             return DF_GMT.parse(dateStr);
         } catch (ParseException e) {
             log.error("str2GMT parse error from: [{}].", dateStr, e);
@@ -93,11 +95,12 @@ public class CommonUtils {
 //        System.out.println(unicode2String("&pound;"));
 //        System.out.println(unicode2String("&euro;"));
 
-//        System.out.println(str2UTC("Mar 26, 2022 08:10:00 UTC"));
-//        System.out.println(str2ISO("2022-03-26T08:10:00+00:00"));
-//        System.out.println(str2GMT("Mar 26, 2022 at 08:10 GMT"));
+        System.out.println(str2UTC("Mar 28, 2022 01:59:00 UTC"));
+        System.out.println(str2ISO("2022-03-28T01:59:00+00:00"));
+        System.out.println(str2DateByZone("Mar 28, 2022 at 02:59 GMT"));
+        System.out.println(str2DateByZone("Mar 28, 2022 at 02:59 BST"));
 
-        System.out.println(Pattern.matches("^\\d{4}\\/\\d{2}\\/\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$", "1990/03/21 00:23:54"));
+//        System.out.println(Pattern.matches("^\\d{4}\\/\\d{2}\\/\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$", "1990/03/21 00:23:54"));
     }
 }
 

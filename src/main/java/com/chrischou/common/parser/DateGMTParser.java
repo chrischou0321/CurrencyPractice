@@ -26,6 +26,6 @@ public class DateGMTParser extends StdDeserializer<Date>  {
 
     @Override
     public Date deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
-        return CommonUtils.str2GMT(jsonParser.getText());
+        return CommonUtils.str2DateByZone(jsonParser.getText());
     }
 }

@@ -1,6 +1,7 @@
 package com.chrischou.template;
 
 import com.chrischou.common.model.CoinDeskOriData;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
 import org.junit.Test;
@@ -18,10 +19,12 @@ public class CoinDeskTemplateTestCase {
     @Autowired
     private CoinDeskTemplate coinDeskTemplate;
 
+    private final ObjectMapper objectMapper = new ObjectMapper();
+
     @Test
-    public void testCallCoinDesk() {
+    public void testCallCoinDesk() throws Exception {
         CoinDeskOriData data = coinDeskTemplate.getCoinDeskOriData();
-        System.out.println(data.toString());
+        System.out.println(objectMapper.writeValueAsString(data));
         // time
         Assert.assertNotNull(data.getTime());
         Assert.assertNotNull(data.getTime().getUpdated());
